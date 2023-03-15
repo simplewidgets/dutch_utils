@@ -1,12 +1,12 @@
-class SbiActiviteiten {
+class KVKapiSbiActiviteiten {
   String? sbiCode;
   String? sbiOmschrijving;
   String? indHoofdactiviteit;
 
-  SbiActiviteiten(
+  KVKapiSbiActiviteiten(
       {this.sbiCode, this.sbiOmschrijving, this.indHoofdactiviteit});
 
-  SbiActiviteiten.fromJson(Map<String, dynamic> json) {
+  KVKapiSbiActiviteiten.fromJson(Map<String, dynamic> json) {
     sbiCode = json['sbiCode'];
     sbiOmschrijving = json['sbiOmschrijving'];
     indHoofdactiviteit = json['indHoofdactiviteit'];

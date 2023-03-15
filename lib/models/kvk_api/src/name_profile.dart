@@ -1,7 +1,7 @@
 import '../shared/links.dart';
 import '../shared/name_locations.dart';
 
-class KvkNameProfile {
+class KVKapiNameProfile {
   String? kvkNummer;
   String? rsin;
   String? statutaireNaam;
@@ -9,10 +9,10 @@ class KvkNameProfile {
   String? ookGenoemd;
   String? startdatum;
   String? einddatum;
-  List<Vestigingen>? vestigingen;
-  List<Links>? lLinks;
+  List<KVKapiVestigingen>? vestigingen;
+  List<KVKapiLinks>? lLinks;
 
-  KvkNameProfile(
+  KVKapiNameProfile(
       {this.kvkNummer,
       this.rsin,
       this.statutaireNaam,
@@ -23,7 +23,7 @@ class KvkNameProfile {
       this.vestigingen,
       this.lLinks});
 
-  KvkNameProfile.fromJson(Map<String, dynamic> json) {
+  KVKapiNameProfile.fromJson(Map<String, dynamic> json) {
     kvkNummer = json['kvkNummer'];
     rsin = json['rsin'];
     statutaireNaam = json['statutaireNaam'];
@@ -32,15 +32,15 @@ class KvkNameProfile {
     startdatum = json['startdatum'];
     einddatum = json['einddatum'];
     if (json['vestigingen'] != null) {
-      vestigingen = <Vestigingen>[];
+      vestigingen = <KVKapiVestigingen>[];
       json['vestigingen'].forEach((v) {
-        vestigingen!.add(Vestigingen.fromJson(v));
+        vestigingen!.add(KVKapiVestigingen.fromJson(v));
       });
     }
     if (json['_links'] != null) {
-      lLinks = <Links>[];
+      lLinks = <KVKapiLinks>[];
       json['_links'].forEach((v) {
-        lLinks!.add(Links.fromJson(v));
+        lLinks!.add(KVKapiLinks.fromJson(v));
       });
     }
   }

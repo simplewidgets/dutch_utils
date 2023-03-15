@@ -1,15 +1,15 @@
-import 'package:dutch_utils/models/kvk/shared/links.dart';
+import 'package:dutch_utils/models/kvk_api/shared/links.dart';
 import '../shared/business_location.dart';
 
-class KvkLocationProfile {
+class KVKapiLocationProfile {
   String? kvkNummer;
   int? aantalCommercieleVestigingen;
   int? aantalNietCommercieleVestigingen;
   int? totaalAantalVestigingen;
-  List<BedrijfsVestigingen>? vestigingen;
-  List<Links>? links;
+  List<KVKapiBedrijfsVestigingen>? vestigingen;
+  List<KVKapiLinks>? links;
 
-  KvkLocationProfile(
+  KVKapiLocationProfile(
       {this.kvkNummer,
       this.aantalCommercieleVestigingen,
       this.aantalNietCommercieleVestigingen,
@@ -17,21 +17,21 @@ class KvkLocationProfile {
       this.vestigingen,
       this.links});
 
-  KvkLocationProfile.fromJson(Map<String, dynamic> json) {
+  KVKapiLocationProfile.fromJson(Map<String, dynamic> json) {
     kvkNummer = json['kvkNummer'];
     aantalCommercieleVestigingen = json['aantalCommercieleVestigingen'];
     aantalNietCommercieleVestigingen = json['aantalNietCommercieleVestigingen'];
     totaalAantalVestigingen = json['totaalAantalVestigingen'];
     if (json['vestigingen'] != null) {
-      vestigingen = <BedrijfsVestigingen>[];
+      vestigingen = <KVKapiBedrijfsVestigingen>[];
       json['vestigingen'].forEach((v) {
-        vestigingen!.add(BedrijfsVestigingen.fromJson(v));
+        vestigingen!.add(KVKapiBedrijfsVestigingen.fromJson(v));
       });
     }
     if (json['links'] != null) {
-      links = <Links>[];
+      links = <KVKapiLinks>[];
       json['links'].forEach((v) {
-        links!.add(Links.fromJson(v));
+        links!.add(KVKapiLinks.fromJson(v));
       });
     }
   }

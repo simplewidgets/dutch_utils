@@ -1,10 +1,10 @@
-class MaterieleRegistratie {
+class KVKapiMaterieleRegistratie {
   String? datumAanvang;
   String? datumEinde;
 
-  MaterieleRegistratie({this.datumAanvang, this.datumEinde});
+  KVKapiMaterieleRegistratie({this.datumAanvang, this.datumEinde});
 
-  MaterieleRegistratie.fromJson(Map<String, dynamic> json) {
+  KVKapiMaterieleRegistratie.fromJson(Map<String, dynamic> json) {
     datumAanvang = json['datumAanvang'];
     datumEinde = json['datumEinde'];
   }

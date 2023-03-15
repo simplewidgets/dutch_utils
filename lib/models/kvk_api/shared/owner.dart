@@ -1,16 +1,16 @@
-import 'package:dutch_utils/models/kvk/shared/links.dart';
+import 'package:dutch_utils/models/kvk_api/shared/links.dart';
 
 import 'address.dart';
 
-class Eigenaar {
+class KVKapiEigenaar {
   String? rsin;
   String? rechtsvorm;
   String? uitgebreideRechtsvorm;
-  List<Adressen>? adressen;
+  List<KVKapiAdressen>? adressen;
   List<String>? websites;
-  List<Links>? links;
+  List<KVKapiLinks>? links;
 
-  Eigenaar(
+  KVKapiEigenaar(
       {this.rsin,
       this.rechtsvorm,
       this.uitgebreideRechtsvorm,
@@ -18,23 +18,23 @@ class Eigenaar {
       this.websites,
       this.links});
 
-  Eigenaar.fromJson(Map<String, dynamic> json) {
+  KVKapiEigenaar.fromJson(Map<String, dynamic> json) {
     rsin = json['rsin'];
     rechtsvorm = json['rechtsvorm'];
     uitgebreideRechtsvorm = json['uitgebreideRechtsvorm'];
     if (json['adressen'] != null) {
-      adressen = <Adressen>[];
+      adressen = <KVKapiAdressen>[];
       json['adressen'].forEach((v) {
-        adressen!.add(Adressen.fromJson(v));
+        adressen!.add(KVKapiAdressen.fromJson(v));
       });
     }
     if (json['websites'] != null) {
       websites = json['websites'].cast<String>();
     }
     if (json['links'] != null) {
-      links = <Links>[];
+      links = <KVKapiLinks>[];
       json['links'].forEach((v) {
-        links!.add(Links.fromJson(v));
+        links!.add(KVKapiLinks.fromJson(v));
       });
     }
   }

@@ -1,4 +1,4 @@
-import 'package:dutch_utils/models/kvk/shared/main_location.dart';
+import 'package:dutch_utils/models/kvk_api/shared/main_location.dart';
 
 import '../shared/links.dart';
 import '../shared/owner.dart';
@@ -16,7 +16,7 @@ import '../shared/trade_names.dart';
 ///
 /// We recommend the following NODEJS-package to validate the response (which we use in our own projects):
 /// https://github.com/Quantix-IT/kvk
-class KvkBasicProfile {
+class KVKapiBasicProfile {
   /// The KVK number of the company.
   String? kvkNummer;
 
@@ -30,7 +30,7 @@ class KvkBasicProfile {
   String? formeleRegistratiedatum;
 
   /// The date the company was last updated.
-  MaterieleRegistratie? materieleRegistratie;
+  KVKapiMaterieleRegistratie? materieleRegistratie;
 
   /// The total number of employees.
   int? totaalWerkzamePersonen;
@@ -39,18 +39,18 @@ class KvkBasicProfile {
   String? statutaireNaam;
 
   /// The list of trade names of the company.
-  List<Handelsnamen>? handelsnamen;
+  List<KVKapiHandelsnamen>? handelsnamen;
 
   /// The list of SBI codes of the company.
-  List<SbiActiviteiten>? sbiActiviteiten;
+  List<KVKapiSbiActiviteiten>? sbiActiviteiten;
 
   /// The list of links to the company.
-  List<Links>? links;
+  List<KVKapiLinks>? links;
 
   /// The list of embedded objects.
   KvkBasicProfileEmbedded? eEmbedded;
 
-  KvkBasicProfile(
+  KVKapiBasicProfile(
       {this.kvkNummer,
       this.indNonMailing,
       this.naam,
@@ -64,32 +64,32 @@ class KvkBasicProfile {
       this.eEmbedded});
 
   /// Creates a BasicProfileKVK object from a JSON string.
-  KvkBasicProfile.fromJson(Map<String, dynamic> json) {
+  KVKapiBasicProfile.fromJson(Map<String, dynamic> json) {
     kvkNummer = json['kvkNummer'];
     indNonMailing = json['indNonMailing'];
     naam = json['naam'];
     formeleRegistratiedatum = json['formeleRegistratiedatum'];
     materieleRegistratie = json['materieleRegistratie'] != null
-        ? MaterieleRegistratie.fromJson(json['materieleRegistratie'])
+        ? KVKapiMaterieleRegistratie.fromJson(json['materieleRegistratie'])
         : null;
     totaalWerkzamePersonen = json['totaalWerkzamePersonen'];
     statutaireNaam = json['statutaireNaam'];
     if (json['handelsnamen'] != null) {
-      handelsnamen = <Handelsnamen>[];
+      handelsnamen = <KVKapiHandelsnamen>[];
       json['handelsnamen'].forEach((v) {
-        handelsnamen!.add(Handelsnamen.fromJson(v));
+        handelsnamen!.add(KVKapiHandelsnamen.fromJson(v));
       });
     }
     if (json['sbiActiviteiten'] != null) {
-      sbiActiviteiten = <SbiActiviteiten>[];
+      sbiActiviteiten = <KVKapiSbiActiviteiten>[];
       json['sbiActiviteiten'].forEach((v) {
-        sbiActiviteiten!.add(SbiActiviteiten.fromJson(v));
+        sbiActiviteiten!.add(KVKapiSbiActiviteiten.fromJson(v));
       });
     }
     if (json['links'] != null) {
-      links = <Links>[];
+      links = <KVKapiLinks>[];
       json['links'].forEach((v) {
-        links!.add(Links.fromJson(v));
+        links!.add(KVKapiLinks.fromJson(v));
       });
     }
     eEmbedded = json['_embedded'] != null
@@ -127,17 +127,18 @@ class KvkBasicProfile {
 }
 
 class KvkBasicProfileEmbedded {
-  Hoofdvestiging? hoofdvestiging;
-  Eigenaar? eigenaar;
+  KVKapiHoofdvestiging? hoofdvestiging;
+  KVKapiEigenaar? eigenaar;
 
   KvkBasicProfileEmbedded({this.hoofdvestiging, this.eigenaar});
 
   KvkBasicProfileEmbedded.fromJson(Map<String, dynamic> json) {
     hoofdvestiging = json['hoofdvestiging'] != null
-        ? Hoofdvestiging.fromJson(json['hoofdvestiging'])
+        ? KVKapiHoofdvestiging.fromJson(json['hoofdvestiging'])
         : null;
-    eigenaar =
-        json['eigenaar'] != null ? Eigenaar.fromJson(json['eigenaar']) : null;
+    eigenaar = json['eigenaar'] != null
+        ? KVKapiEigenaar.fromJson(json['eigenaar'])
+        : null;
   }
 
   Map<String, dynamic> toJson() {

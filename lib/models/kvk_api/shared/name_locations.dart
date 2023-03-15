@@ -2,15 +2,15 @@ import 'links.dart';
 import 'trade_names.dart';
 
 /// Locations that are part of the name profile.
-class Vestigingen {
+class KVKapiVestigingen {
   String? vestigingsnummer;
   String? eersteHandelsnaam;
-  List<Handelsnamen>? handelsnamen;
-  List<Links>? lLinks;
+  List<KVKapiHandelsnamen>? handelsnamen;
+  List<KVKapiLinks>? lLinks;
   String? naam;
   String? ookGenoemd;
 
-  Vestigingen(
+  KVKapiVestigingen(
       {this.vestigingsnummer,
       this.eersteHandelsnaam,
       this.handelsnamen,
@@ -18,19 +18,19 @@ class Vestigingen {
       this.naam,
       this.ookGenoemd});
 
-  Vestigingen.fromJson(Map<String, dynamic> json) {
+  KVKapiVestigingen.fromJson(Map<String, dynamic> json) {
     vestigingsnummer = json['vestigingsnummer'];
     eersteHandelsnaam = json['eersteHandelsnaam'];
     if (json['handelsnamen'] != null) {
-      handelsnamen = <Handelsnamen>[];
+      handelsnamen = <KVKapiHandelsnamen>[];
       json['handelsnamen'].forEach((v) {
-        handelsnamen!.add(Handelsnamen.fromJson(v));
+        handelsnamen!.add(KVKapiHandelsnamen.fromJson(v));
       });
     }
     if (json['_links'] != null) {
-      lLinks = <Links>[];
+      lLinks = <KVKapiLinks>[];
       json['_links'].forEach((v) {
-        lLinks!.add(Links.fromJson(v));
+        lLinks!.add(KVKapiLinks.fromJson(v));
       });
     }
     naam = json['naam'];

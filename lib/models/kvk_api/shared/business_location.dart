@@ -1,7 +1,7 @@
-import 'package:dutch_utils/models/kvk/shared/links.dart';
+import 'package:dutch_utils/models/kvk_api/shared/links.dart';
 
 /// Locations of the business from the location profile
-class BedrijfsVestigingen {
+class KVKapiBedrijfsVestigingen {
   String? vestigingsnummer;
   String? kvkNummer;
   String? eersteHandelsnaam;
@@ -9,9 +9,9 @@ class BedrijfsVestigingen {
   String? indAdresAfgeschermd;
   String? indCommercieleVestiging;
   String? volledigAdres;
-  List<Links>? links;
+  List<KVKapiLinks>? links;
 
-  BedrijfsVestigingen(
+  KVKapiBedrijfsVestigingen(
       {this.vestigingsnummer,
       this.kvkNummer,
       this.eersteHandelsnaam,
@@ -21,7 +21,7 @@ class BedrijfsVestigingen {
       this.volledigAdres,
       this.links});
 
-  BedrijfsVestigingen.fromJson(Map<String, dynamic> json) {
+  KVKapiBedrijfsVestigingen.fromJson(Map<String, dynamic> json) {
     vestigingsnummer = json['vestigingsnummer'];
     kvkNummer = json['kvkNummer'];
     eersteHandelsnaam = json['eersteHandelsnaam'];
@@ -30,9 +30,9 @@ class BedrijfsVestigingen {
     indCommercieleVestiging = json['indCommercieleVestiging'];
     volledigAdres = json['volledigAdres'];
     if (json['links'] != null) {
-      links = <Links>[];
+      links = <KVKapiLinks>[];
       json['links'].forEach((v) {
-        links!.add(Links.fromJson(v));
+        links!.add(KVKapiLinks.fromJson(v));
       });
     }
   }

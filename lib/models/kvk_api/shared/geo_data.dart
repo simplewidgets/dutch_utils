@@ -1,5 +1,5 @@
 /// GeoData is a model class for the GeoData object in the KVK API
-class GeoData {
+class KVKapiGeoData {
   String? addresseerbaarObjectId;
   String? nummerAanduidingId;
   double? gpsLatitude;
@@ -8,7 +8,7 @@ class GeoData {
   double? rijksdriehoekY;
   double? rijksdriehoekZ;
 
-  GeoData(
+  KVKapiGeoData(
       {this.addresseerbaarObjectId,
       this.nummerAanduidingId,
       this.gpsLatitude,
@@ -17,7 +17,7 @@ class GeoData {
       this.rijksdriehoekY,
       this.rijksdriehoekZ});
 
-  GeoData.fromJson(Map<String, dynamic> json) {
+  KVKapiGeoData.fromJson(Map<String, dynamic> json) {
     addresseerbaarObjectId = json['addresseerbaarObjectId'];
     nummerAanduidingId = json['nummerAanduidingId'];
     gpsLatitude = json['gpsLatitude'];

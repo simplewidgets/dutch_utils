@@ -1,5 +1,5 @@
 name: dutch_utils
-description: A package for common "problems" for Dutch developers.
+description: Common use cases for Dutch developers including models (like; kvk, rdw), regex and formatters. 
 version: 0.0.1
 
 
@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  intl: ^0.18.0
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:

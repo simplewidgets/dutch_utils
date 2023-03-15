@@ -1,6 +1,6 @@
-import 'package:dutch_utils/models/kvk/shared/links.dart';
+import 'package:dutch_utils/models/kvk_api/shared/links.dart';
 
-class KvkSearchResponse {
+class KVKapiSearchResponse {
   /// The current page number
   int? pagina;
 
@@ -20,9 +20,9 @@ class KvkSearchResponse {
   List<KvkSearchResult>? resultaten;
 
   /// Links to other pages
-  List<Links>? links;
+  List<KVKapiLinks>? links;
 
-  KvkSearchResponse(
+  KVKapiSearchResponse(
       {this.pagina,
       this.aantal,
       this.totaal,
@@ -32,7 +32,7 @@ class KvkSearchResponse {
       this.links});
 
   /// Create a KvkSearchResponse from a JSON object
-  KvkSearchResponse.fromJson(Map<String, dynamic> json) {
+  KVKapiSearchResponse.fromJson(Map<String, dynamic> json) {
     pagina = json['pagina'];
     aantal = json['aantal'];
     totaal = json['totaal'];
@@ -45,9 +45,9 @@ class KvkSearchResponse {
       });
     }
     if (json['links'] != null) {
-      links = <Links>[];
+      links = <KVKapiLinks>[];
       json['links'].forEach((v) {
-        links!.add(Links.fromJson(v));
+        links!.add(KVKapiLinks.fromJson(v));
       });
     }
   }
@@ -112,7 +112,7 @@ class KvkSearchResult {
   String? vervallenNaam;
 
   /// Links to other pages
-  List<Links>? links;
+  List<KVKapiLinks>? links;
 
   KvkSearchResult(
       {this.kvkNummer,
@@ -145,9 +145,9 @@ class KvkSearchResult {
     actief = json['actief'];
     vervallenNaam = json['vervallenNaam'];
     if (json['links'] != null) {
-      links = <Links>[];
+      links = <KVKapiLinks>[];
       json['links'].forEach((v) {
-        links!.add(Links.fromJson(v));
+        links!.add(KVKapiLinks.fromJson(v));
       });
     }
   }

@@ -1,29 +1,29 @@
-import 'package:dutch_utils/models/kvk/shared/registration_date.dart';
+import 'package:dutch_utils/models/kvk_api/shared/registration_date.dart';
 import 'address.dart';
 import 'links.dart';
 import 'sbi_activities.dart';
 import 'trade_names.dart';
 
-class Hoofdvestiging {
+class KVKapiHoofdvestiging {
   String? vestigingsnummer;
   String? kvkNummer;
   String? rsin;
   String? indNonMailing;
   String? formeleRegistratiedatum;
-  MaterieleRegistratie? materieleRegistratie;
+  KVKapiMaterieleRegistratie? materieleRegistratie;
   String? eersteHandelsnaam;
   String? indHoofdvestiging;
   String? indCommercieleVestiging;
   int? voltijdWerkzamePersonen;
   int? totaalWerkzamePersonen;
   int? deeltijdWerkzamePersonen;
-  List<Handelsnamen>? handelsnamen;
-  List<Adressen>? adressen;
+  List<KVKapiHandelsnamen>? handelsnamen;
+  List<KVKapiAdressen>? adressen;
   List<String>? websites;
-  List<SbiActiviteiten>? sbiActiviteiten;
-  List<Links>? links;
+  List<KVKapiSbiActiviteiten>? sbiActiviteiten;
+  List<KVKapiLinks>? links;
 
-  Hoofdvestiging(
+  KVKapiHoofdvestiging(
       {this.vestigingsnummer,
       this.kvkNummer,
       this.rsin,
@@ -42,14 +42,14 @@ class Hoofdvestiging {
       this.sbiActiviteiten,
       this.links});
 
-  Hoofdvestiging.fromJson(Map<String, dynamic> json) {
+  KVKapiHoofdvestiging.fromJson(Map<String, dynamic> json) {
     vestigingsnummer = json['vestigingsnummer'];
     kvkNummer = json['kvkNummer'];
     rsin = json['rsin'];
     indNonMailing = json['indNonMailing'];
     formeleRegistratiedatum = json['formeleRegistratiedatum'];
     materieleRegistratie = json['materieleRegistratie'] != null
-        ? MaterieleRegistratie.fromJson(json['materieleRegistratie'])
+        ? KVKapiMaterieleRegistratie.fromJson(json['materieleRegistratie'])
         : null;
     eersteHandelsnaam = json['eersteHandelsnaam'];
     indHoofdvestiging = json['indHoofdvestiging'];
@@ -58,30 +58,30 @@ class Hoofdvestiging {
     totaalWerkzamePersonen = json['totaalWerkzamePersonen'];
     deeltijdWerkzamePersonen = json['deeltijdWerkzamePersonen'];
     if (json['handelsnamen'] != null) {
-      handelsnamen = <Handelsnamen>[];
+      handelsnamen = <KVKapiHandelsnamen>[];
       json['handelsnamen'].forEach((v) {
-        handelsnamen!.add(Handelsnamen.fromJson(v));
+        handelsnamen!.add(KVKapiHandelsnamen.fromJson(v));
       });
     }
     if (json['adressen'] != null) {
-      adressen = <Adressen>[];
+      adressen = <KVKapiAdressen>[];
       json['adressen'].forEach((v) {
-        adressen!.add(Adressen.fromJson(v));
+        adressen!.add(KVKapiAdressen.fromJson(v));
       });
     }
     if (json['websites'] != null) {
       websites = json['websites'].cast<String>();
     }
     if (json['sbiActiviteiten'] != null) {
-      sbiActiviteiten = <SbiActiviteiten>[];
+      sbiActiviteiten = <KVKapiSbiActiviteiten>[];
       json['sbiActiviteiten'].forEach((v) {
-        sbiActiviteiten!.add(SbiActiviteiten.fromJson(v));
+        sbiActiviteiten!.add(KVKapiSbiActiviteiten.fromJson(v));
       });
     }
     if (json['links'] != null) {
-      links = <Links>[];
+      links = <KVKapiLinks>[];
       json['links'].forEach((v) {
-        links!.add(Links.fromJson(v));
+        links!.add(KVKapiLinks.fromJson(v));
       });
     }
   }

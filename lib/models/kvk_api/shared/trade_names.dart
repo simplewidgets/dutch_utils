@@ -1,10 +1,10 @@
-class Handelsnamen {
+class KVKapiHandelsnamen {
   String? naam;
   int? volgorde;
 
-  Handelsnamen({this.naam, this.volgorde});
+  KVKapiHandelsnamen({this.naam, this.volgorde});
 
-  Handelsnamen.fromJson(Map<String, dynamic> json) {
+  KVKapiHandelsnamen.fromJson(Map<String, dynamic> json) {
     naam = json['naam'];
     volgorde = json['volgorde'];
   }

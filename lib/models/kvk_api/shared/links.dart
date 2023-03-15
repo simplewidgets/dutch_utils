@@ -1,5 +1,5 @@
 /// Link class for the KVK API
-class Links {
+class KVKapiLinks {
   String? rel;
   String? href;
   String? hreflang;
@@ -10,7 +10,7 @@ class Links {
   String? profile;
   String? name;
 
-  Links(
+  KVKapiLinks(
       {this.rel,
       this.href,
       this.hreflang,
@@ -21,7 +21,7 @@ class Links {
       this.profile,
       this.name});
 
-  Links.fromJson(Map<String, dynamic> json) {
+  KVKapiLinks.fromJson(Map<String, dynamic> json) {
     rel = json['rel'];
     href = json['href'];
     hreflang = json['hreflang'];

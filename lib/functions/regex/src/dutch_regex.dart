@@ -1,6 +1,6 @@
 /// This class contains common regex for Dutch language
 /// Like: KvK number, IBAN number, LicensPlate, etc.
-class DutchRegex {
+class DutchCommonRegex {
   // alpha: '[a-zA-Z .-]+',
   static bool matchesAlpha(String value) {
     return RegExp(r'[a-zA-Z .-]+').hasMatch(value);

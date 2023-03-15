@@ -1,52 +1,149 @@
+/// Model for the RDW api response
 class RdwCarInformation {
+  /// License plate number
   String? kenteken;
+
+  /// Vehicle type
   String? voertuigsoort;
+
+  /// Brand
   String? merk;
+
+  /// Trade name
   String? handelsbenaming;
+
+  /// Expiration date of the APK
   String? vervaldatumApk;
+
+  /// Date of registration
   String? datumTenaamstelling;
+
+  /// Bruto BPM
   String? brutoBpm;
+
+  /// Design
   String? inrichting;
+
+  /// Number of seats
   String? aantalZitplaatsen;
+
+  /// First color
   String? eersteKleur;
+
+  /// Second color
   String? tweedeKleur;
+
+  /// Number of cylinders
   String? aantalCilinders;
+
+  /// Cylinder capacity
   String? cilinderinhoud;
+
+  /// Mass of empty vehicle
   String? massaLedigVoertuig;
+
+  /// Maximum mass of vehicle
   String? toegestaneMaximumMassaVoertuig;
+
+  /// Mass ready to drive
   String? massaRijklaar;
+
+  /// Maximum mass to pull unbraked
   String? maximumMassaTrekkenOngeremd;
+
+  /// Maximum mass to pull braked
   String? maximumTrekkenMassaGeremd;
+
+  /// Date of first registration
   String? datumEersteToelating;
+
+  /// Date of first registration in the Netherlands
   String? datumEersteTenaamstellingInNederland;
+
+  /// Waiting for approval
   String? wachtOpKeuren;
+
+  /// Catalog price
   String? catalogusprijs;
+
+  /// WAM insured
   String? wamVerzekerd;
+
+  /// Number of doors
   String? aantalDeuren;
+
+  /// Number of wheels
   String? aantalWielen;
+
+  /// Distance from the coupling point to the rear of the vehicle
   String? afstandHartKoppelingTotAchterzijdeVoertuig;
+
+  /// Distance from the front of the vehicle to the coupling point
   String? afstandVoorzijdeVoertuigTotHartKoppeling;
+
+  /// Length
   String? lengte;
+
+  /// Width
   String? breedte;
+
+  /// European vehicle category
   String? europeseVoertuigcategorie;
+
+  /// Technical maximum mass of the vehicle
   String? technischeMaxMassaVoertuig;
+
+  /// Type
   String? type;
+
+  /// Type approval number
   String? typegoedkeuringsnummer;
+
+  /// Variant
   String? variant;
+
+  /// Version
   String? uitvoering;
+
+  /// Tracking number EU type approval
   String? volgnummerWijzigingEuTypegoedkeuring;
+
+  /// Power mass ready to drive
   String? vermogenMassarijklaar;
+
+  /// Wheelbase
   String? wielbasis;
+
+  /// Export indicator
   String? exportIndicator;
+
+  /// Open recall action indicator
   String? openstaandeTerugroepactieIndicator;
+
+  /// Taxi indicator
   String? taxiIndicator;
+
+  /// Maximum mass of the vehicle
   String? maximumMassaSamenstelling;
+
+  /// Number of seats wheelchair
   String? aantalRolstoelplaatsen;
+
+  /// Maximum speed
   String? maximumOndersteunendeSnelheid;
+
+  /// Year of last registration meter reading
   String? jaarLaatsteRegistratieTellerstand;
+
+  /// Meter reading judgement
   String? tellerstandoordeel;
+
+  /// Explanation of meter reading judgement
   String? codeToelichtingTellerstandoordeel;
+
+  /// Transfer car possible
   String? tenaamstellenMogelijk;
+
   String? vervaldatumApkDt;
   String? datumTenaamstellingDt;
   String? datumEersteToelatingDt;

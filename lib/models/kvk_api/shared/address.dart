@@ -1,6 +1,6 @@
 import 'geo_data.dart';
 
-class Adressen {
+class KVKapiAdressen {
   String? type;
   String? indAfgeschermd;
   String? volledigAdres;
@@ -16,9 +16,9 @@ class Adressen {
   String? postcodeWoonplaats;
   String? regio;
   String? land;
-  GeoData? geoData;
+  KVKapiGeoData? geoData;
 
-  Adressen(
+  KVKapiAdressen(
       {this.type,
       this.indAfgeschermd,
       this.volledigAdres,
@@ -36,7 +36,7 @@ class Adressen {
       this.land,
       this.geoData});
 
-  Adressen.fromJson(Map<String, dynamic> json) {
+  KVKapiAdressen.fromJson(Map<String, dynamic> json) {
     type = json['type'];
     indAfgeschermd = json['indAfgeschermd'];
     volledigAdres = json['volledigAdres'];
@@ -52,8 +52,9 @@ class Adressen {
     postcodeWoonplaats = json['postcodeWoonplaats'];
     regio = json['regio'];
     land = json['land'];
-    geoData =
-        json['geoData'] != null ? GeoData.fromJson(json['geoData']) : null;
+    geoData = json['geoData'] != null
+        ? KVKapiGeoData.fromJson(json['geoData'])
+        : null;
   }
 
   Map<String, dynamic> toJson() {

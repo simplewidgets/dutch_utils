@@ -32,3 +32,6 @@ This class has common Regex which checks if the provided string is valid. A few 
 In the Netherlands we use the period`.` and comma`,` in the opposite way as the rest of the world. We use the comma as the divider between euro's and cents. So a thousand euro's is written like: €1.000,00 and a milion euro is written like: 1.000.000,00
 
 This class provides simpleformatters to turn `int` values in to formatted strings.
+
+## Like to contribute?
+Feel free to help us improve this package by creating issues, pull request etc. For any questions you can email hello@simplewidgets.dev

@@ -1,7 +1,7 @@
 name: dutch_utils
 description: Common use cases for Dutch developers including models (like; kvk, rdw), regex and formatters. 
 version: 0.0.1
-
+homepage: https://github.com/simplewidgets/dutch_utils
 
 environment:
   sdk: '>=2.19.4 <3.0.0'

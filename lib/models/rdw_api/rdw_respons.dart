@@ -1,5 +1,5 @@
 /// Model for the RDW api response
-class RdwCarInformation {
+class RDWapiCarInformation {
   /// License plate number
   String? kenteken;
 
@@ -155,7 +155,7 @@ class RdwCarInformation {
   String? apiGekentekendeVoertuigenCarrosserieSpecifiek;
   String? apiGekentekendeVoertuigenVoertuigklasse;
 
-  RdwCarInformation(
+  RDWapiCarInformation(
       {this.kenteken,
       this.voertuigsoort,
       this.merk,
@@ -215,7 +215,7 @@ class RdwCarInformation {
       this.apiGekentekendeVoertuigenCarrosserieSpecifiek,
       this.apiGekentekendeVoertuigenVoertuigklasse});
 
-  RdwCarInformation.fromJson(Map<String?, dynamic> json) {
+  RDWapiCarInformation.fromJson(Map<String?, dynamic> json) {
     kenteken = json['kenteken'];
     voertuigsoort = json['voertuigsoort'];
     merk = json['merk'];

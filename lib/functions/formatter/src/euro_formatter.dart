@@ -2,16 +2,24 @@ import 'package:intl/intl.dart';
 
 class EuroFormatter {
   /// Converts an amount (int) to a euro amount string
-  static String stringToEuro(int amount) {
+  static String stringFromEuro(int amount, {bool hideEuroSign = false}) {
     double x = amount.toDouble();
 
     var f = NumberFormat("###,###,###,###,###,###,###,###,###,###,##0");
 
-    return f.format(x).toString().replaceAll(',', '.');
+    if (hideEuroSign) {
+      return f.format(x).toString().replaceAll(',', '.');
+    } else {
+      return '€ ${f.format(x).toString().replaceAll(',', '.')}';
+    }
   }
 
   /// Converts an amount in cents to a euro amount with decimals
-  static String stringToCent(int amount, {bool fromEuro = false}) {
+  static String stringFromCent(
+    int amount, {
+    bool fromEuro = true,
+    bool hideEuroSign = false,
+  }) {
     double x = amount.toDouble();
 
     if (fromEuro) {
@@ -23,6 +31,10 @@ class EuroFormatter {
     List<String> g = f.format(x).toString().split('.');
     String h = g[0].replaceAll(',', '.');
 
-    return '$h,${g[1]}';
+    if (hideEuroSign) {
+      return '$h,${g[1]}';
+    } else {
+      return '€ $h,${g[1]}';
+    }
   }
 }

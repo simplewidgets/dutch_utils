@@ -76,6 +76,37 @@ class DutchCommonRegex {
     }
   }
 
+  // static bool ibanMod97Check(String value) {
+  //   // Check if IBAN passed the MOD97 algorithm
+  //   // Which means that the IBAN is valid
+  //   // Example IBAN: NL91ABNA0417164300
+
+  //   // Move the four initial characters to the end of the string.
+  //   // Example: NL91ABNA0417164300 becomes ABNA0417164300NL91.
+
+  //   // Replace each letter in the string with two digits,
+  //   // thereby expanding the string, where A = 10, B = 11, ..., Z = 35.
+
+  //   // Interpret the string as a decimal integer and compute the remainder
+  //   // of that number on division by 97.
+
+  //   // If the remainder is 1, the check digit test is passed and the IBAN
+  //   // might be valid.
+
+  //   // Example: ABNA0417164300NL91 becomes 1011129810417164300314091
+  //   // 1011129810417164300314091 mod 97 = 1
+
+  //   String iban = value.replaceAll(' ', '').toUpperCase();
+  //   String modifiedIban = iban.substring(4) + iban.substring(0, 4);
+  //   String numericIban = '';
+
+  //   for (int i = 0; i < modifiedIban.length; i++) {
+  //     numericIban += modifiedIban.codeUnitAt(i).toString();
+  //   }
+
+  //   return int.parse(numericIban) % 97 == 1;
+  // }
+
   /// Check if provided Licenseplate is valid.
   static bool matchesLicensPlate(String value) {
     return RegExp(

@@ -1,4 +1,4 @@
-import 'package:dutch_utils/models/kvk_api/shared/registration_date.dart';
+import 'package:dutch_utils/models/kvk_api/v1/shared/registration_date.dart';
 import 'address.dart';
 import 'links.dart';
 import 'sbi_activities.dart';

@@ -1,4 +1,4 @@
-import 'package:dutch_utils/models/kvk_api/shared/links.dart';
+import 'package:dutch_utils/models/kvk_api/v1/shared/links.dart';
 
 class KVKapiSearchResponse {
   /// The current page number
@@ -34,7 +34,7 @@ class KVKapiSearchResponse {
   /// Create a KvkSearchResponse from a JSON object
   KVKapiSearchResponse.fromJson(Map<String, dynamic> json) {
     pagina = json['pagina'];
-    aantal = json['aantal'];
+    aantal = json['aantal'] ?? json['resultatenPerPagina'];
     totaal = json['totaal'];
     vorige = json['vorige'];
     volgende = json['volgende'];
@@ -134,7 +134,7 @@ class KvkSearchResult {
     kvkNummer = json['kvkNummer'];
     rsin = json['rsin'];
     vestigingsnummer = json['vestigingsnummer'];
-    handelsnaam = json['handelsnaam'];
+    handelsnaam = json['handelsnaam'] ?? json['naam'];
     adresType = json['adresType'];
     straatnaam = json['straatnaam'];
     huisnummer = json['huisnummer'];

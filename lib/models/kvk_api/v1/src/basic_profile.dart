@@ -1,4 +1,4 @@
-import 'package:dutch_utils/models/kvk_api/shared/main_location.dart';
+import 'package:dutch_utils/models/kvk_api/v1/shared/main_location.dart';
 
 import '../shared/links.dart';
 import '../shared/owner.dart';

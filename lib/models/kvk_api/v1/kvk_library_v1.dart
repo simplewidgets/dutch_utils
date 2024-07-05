@@ -1,4 +1,3 @@
-
 library kvk_models;
 
 // Main classes
